@@ -10,4 +10,15 @@
 
 @interface VRViewController : UIViewController
 
+// ---- outlets ----
+@property (weak, nonatomic) IBOutlet UITextField *txtOriginalAmount;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentFoodQuality;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentServiceQuality;
+@property (weak, nonatomic) IBOutlet UITextField *txtTipAmount;
+@property (weak, nonatomic) IBOutlet UIStepper *stepperTip;
+@property (weak, nonatomic) IBOutlet UILabel *labelSplitCount;
+@property (weak, nonatomic) IBOutlet UIStepper *stepperSplitCount;
+@property (weak, nonatomic) IBOutlet UILabel *labelFinalAmount;
+
+
 @end
