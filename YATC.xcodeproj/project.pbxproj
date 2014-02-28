@@ -1,0 +1,476 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		60E7C7B318C06F4B003E7D3A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60E7C7B218C06F4B003E7D3A /* Foundation.framework */; };
+		60E7C7B518C06F4B003E7D3A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60E7C7B418C06F4B003E7D3A /* CoreGraphics.framework */; };
+		60E7C7B718C06F4B003E7D3A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60E7C7B618C06F4B003E7D3A /* UIKit.framework */; };
+		60E7C7BD18C06F4B003E7D3A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 60E7C7BB18C06F4B003E7D3A /* InfoPlist.strings */; };
+		60E7C7BF18C06F4B003E7D3A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E7C7BE18C06F4B003E7D3A /* main.m */; };
+		60E7C7C318C06F4B003E7D3A /* VRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E7C7C218C06F4B003E7D3A /* VRAppDelegate.m */; };
+		60E7C7C618C06F4B003E7D3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60E7C7C418C06F4B003E7D3A /* Main.storyboard */; };
+		60E7C7C918C06F4B003E7D3A /* VRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E7C7C818C06F4B003E7D3A /* VRViewController.m */; };
+		60E7C7CB18C06F4B003E7D3A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60E7C7CA18C06F4B003E7D3A /* Images.xcassets */; };
+		60E7C7D218C06F4B003E7D3A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60E7C7D118C06F4B003E7D3A /* XCTest.framework */; };
+		60E7C7D318C06F4B003E7D3A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60E7C7B218C06F4B003E7D3A /* Foundation.framework */; };
+		60E7C7D418C06F4B003E7D3A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60E7C7B618C06F4B003E7D3A /* UIKit.framework */; };
+		60E7C7DC18C06F4B003E7D3A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 60E7C7DA18C06F4B003E7D3A /* InfoPlist.strings */; };
+		60E7C7DE18C06F4B003E7D3A /* YATCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E7C7DD18C06F4B003E7D3A /* YATCTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		60E7C7D518C06F4B003E7D3A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 60E7C7A718C06F4B003E7D3A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 60E7C7AE18C06F4B003E7D3A;
+			remoteInfo = YATC;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		60E7C7AF18C06F4B003E7D3A /* YATC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YATC.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		60E7C7B218C06F4B003E7D3A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		60E7C7B418C06F4B003E7D3A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		60E7C7B618C06F4B003E7D3A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		60E7C7BA18C06F4B003E7D3A /* YATC-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "YATC-Info.plist"; sourceTree = "<group>"; };
+		60E7C7BC18C06F4B003E7D3A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		60E7C7BE18C06F4B003E7D3A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		60E7C7C018C06F4B003E7D3A /* YATC-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YATC-Prefix.pch"; sourceTree = "<group>"; };
+		60E7C7C118C06F4B003E7D3A /* VRAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VRAppDelegate.h; sourceTree = "<group>"; };
+		60E7C7C218C06F4B003E7D3A /* VRAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VRAppDelegate.m; sourceTree = "<group>"; };
+		60E7C7C518C06F4B003E7D3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		60E7C7C718C06F4B003E7D3A /* VRViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VRViewController.h; sourceTree = "<group>"; };
+		60E7C7C818C06F4B003E7D3A /* VRViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VRViewController.m; sourceTree = "<group>"; };
+		60E7C7CA18C06F4B003E7D3A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		60E7C7D018C06F4B003E7D3A /* YATCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YATCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		60E7C7D118C06F4B003E7D3A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		60E7C7D918C06F4B003E7D3A /* YATCTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "YATCTests-Info.plist"; sourceTree = "<group>"; };
+		60E7C7DB18C06F4B003E7D3A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		60E7C7DD18C06F4B003E7D3A /* YATCTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YATCTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		60E7C7AC18C06F4B003E7D3A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				60E7C7B518C06F4B003E7D3A /* CoreGraphics.framework in Frameworks */,
+				60E7C7B718C06F4B003E7D3A /* UIKit.framework in Frameworks */,
+				60E7C7B318C06F4B003E7D3A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		60E7C7CD18C06F4B003E7D3A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				60E7C7D218C06F4B003E7D3A /* XCTest.framework in Frameworks */,
+				60E7C7D418C06F4B003E7D3A /* UIKit.framework in Frameworks */,
+				60E7C7D318C06F4B003E7D3A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		60E7C7A618C06F4B003E7D3A = {
+			isa = PBXGroup;
+			children = (
+				60E7C7B818C06F4B003E7D3A /* YATC */,
+				60E7C7D718C06F4B003E7D3A /* YATCTests */,
+				60E7C7B118C06F4B003E7D3A /* Frameworks */,
+				60E7C7B018C06F4B003E7D3A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		60E7C7B018C06F4B003E7D3A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				60E7C7AF18C06F4B003E7D3A /* YATC.app */,
+				60E7C7D018C06F4B003E7D3A /* YATCTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		60E7C7B118C06F4B003E7D3A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				60E7C7B218C06F4B003E7D3A /* Foundation.framework */,
+				60E7C7B418C06F4B003E7D3A /* CoreGraphics.framework */,
+				60E7C7B618C06F4B003E7D3A /* UIKit.framework */,
+				60E7C7D118C06F4B003E7D3A /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		60E7C7B818C06F4B003E7D3A /* YATC */ = {
+			isa = PBXGroup;
+			children = (
+				60E7C7C118C06F4B003E7D3A /* VRAppDelegate.h */,
+				60E7C7C218C06F4B003E7D3A /* VRAppDelegate.m */,
+				60E7C7C418C06F4B003E7D3A /* Main.storyboard */,
+				60E7C7C718C06F4B003E7D3A /* VRViewController.h */,
+				60E7C7C818C06F4B003E7D3A /* VRViewController.m */,
+				60E7C7CA18C06F4B003E7D3A /* Images.xcassets */,
+				60E7C7B918C06F4B003E7D3A /* Supporting Files */,
+			);
+			path = YATC;
+			sourceTree = "<group>";
+		};
+		60E7C7B918C06F4B003E7D3A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				60E7C7BA18C06F4B003E7D3A /* YATC-Info.plist */,
+				60E7C7BB18C06F4B003E7D3A /* InfoPlist.strings */,
+				60E7C7BE18C06F4B003E7D3A /* main.m */,
+				60E7C7C018C06F4B003E7D3A /* YATC-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		60E7C7D718C06F4B003E7D3A /* YATCTests */ = {
+			isa = PBXGroup;
+			children = (
+				60E7C7DD18C06F4B003E7D3A /* YATCTests.m */,
+				60E7C7D818C06F4B003E7D3A /* Supporting Files */,
+			);
+			path = YATCTests;
+			sourceTree = "<group>";
+		};
+		60E7C7D818C06F4B003E7D3A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				60E7C7D918C06F4B003E7D3A /* YATCTests-Info.plist */,
+				60E7C7DA18C06F4B003E7D3A /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		60E7C7AE18C06F4B003E7D3A /* YATC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 60E7C7E118C06F4B003E7D3A /* Build configuration list for PBXNativeTarget "YATC" */;
+			buildPhases = (
+				60E7C7AB18C06F4B003E7D3A /* Sources */,
+				60E7C7AC18C06F4B003E7D3A /* Frameworks */,
+				60E7C7AD18C06F4B003E7D3A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YATC;
+			productName = YATC;
+			productReference = 60E7C7AF18C06F4B003E7D3A /* YATC.app */;
+			productType = "com.apple.product-type.application";
+		};
+		60E7C7CF18C06F4B003E7D3A /* YATCTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 60E7C7E418C06F4B003E7D3A /* Build configuration list for PBXNativeTarget "YATCTests" */;
+			buildPhases = (
+				60E7C7CC18C06F4B003E7D3A /* Sources */,
+				60E7C7CD18C06F4B003E7D3A /* Frameworks */,
+				60E7C7CE18C06F4B003E7D3A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				60E7C7D618C06F4B003E7D3A /* PBXTargetDependency */,
+			);
+			name = YATCTests;
+			productName = YATCTests;
+			productReference = 60E7C7D018C06F4B003E7D3A /* YATCTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		60E7C7A718C06F4B003E7D3A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = VR;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = personal;
+				TargetAttributes = {
+					60E7C7CF18C06F4B003E7D3A = {
+						TestTargetID = 60E7C7AE18C06F4B003E7D3A;
+					};
+				};
+			};
+			buildConfigurationList = 60E7C7AA18C06F4B003E7D3A /* Build configuration list for PBXProject "YATC" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 60E7C7A618C06F4B003E7D3A;
+			productRefGroup = 60E7C7B018C06F4B003E7D3A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				60E7C7AE18C06F4B003E7D3A /* YATC */,
+				60E7C7CF18C06F4B003E7D3A /* YATCTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		60E7C7AD18C06F4B003E7D3A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				60E7C7CB18C06F4B003E7D3A /* Images.xcassets in Resources */,
+				60E7C7BD18C06F4B003E7D3A /* InfoPlist.strings in Resources */,
+				60E7C7C618C06F4B003E7D3A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		60E7C7CE18C06F4B003E7D3A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				60E7C7DC18C06F4B003E7D3A /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		60E7C7AB18C06F4B003E7D3A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				60E7C7C918C06F4B003E7D3A /* VRViewController.m in Sources */,
+				60E7C7C318C06F4B003E7D3A /* VRAppDelegate.m in Sources */,
+				60E7C7BF18C06F4B003E7D3A /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		60E7C7CC18C06F4B003E7D3A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				60E7C7DE18C06F4B003E7D3A /* YATCTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		60E7C7D618C06F4B003E7D3A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 60E7C7AE18C06F4B003E7D3A /* YATC */;
+			targetProxy = 60E7C7D518C06F4B003E7D3A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		60E7C7BB18C06F4B003E7D3A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				60E7C7BC18C06F4B003E7D3A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		60E7C7C418C06F4B003E7D3A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				60E7C7C518C06F4B003E7D3A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		60E7C7DA18C06F4B003E7D3A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				60E7C7DB18C06F4B003E7D3A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		60E7C7DF18C06F4B003E7D3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		60E7C7E018C06F4B003E7D3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		60E7C7E218C06F4B003E7D3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "YATC/YATC-Prefix.pch";
+				INFOPLIST_FILE = "YATC/YATC-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		60E7C7E318C06F4B003E7D3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "YATC/YATC-Prefix.pch";
+				INFOPLIST_FILE = "YATC/YATC-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		60E7C7E518C06F4B003E7D3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/YATC.app/YATC";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "YATC/YATC-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "YATCTests/YATCTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		60E7C7E618C06F4B003E7D3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/YATC.app/YATC";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "YATC/YATC-Prefix.pch";
+				INFOPLIST_FILE = "YATCTests/YATCTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		60E7C7AA18C06F4B003E7D3A /* Build configuration list for PBXProject "YATC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				60E7C7DF18C06F4B003E7D3A /* Debug */,
+				60E7C7E018C06F4B003E7D3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		60E7C7E118C06F4B003E7D3A /* Build configuration list for PBXNativeTarget "YATC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				60E7C7E218C06F4B003E7D3A /* Debug */,
+				60E7C7E318C06F4B003E7D3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		60E7C7E418C06F4B003E7D3A /* Build configuration list for PBXNativeTarget "YATCTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				60E7C7E518C06F4B003E7D3A /* Debug */,
+				60E7C7E618C06F4B003E7D3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 60E7C7A718C06F4B003E7D3A /* Project object */;
+}
