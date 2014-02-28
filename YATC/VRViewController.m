@@ -64,6 +64,9 @@ typedef NS_ENUM(NSUInteger, quality){
 }
 
 - (void) setTipText:(Float32) tip {
+    if( [self shouldSaveTip] ) {
+        [self saveLastTipValue];
+    }
     [self.txtTipAmount setText:[NSString stringWithFormat:@"%.02f", tip]];
     [self setStepperValue:tip];
 }
@@ -93,21 +96,37 @@ typedef NS_ENUM(NSUInteger, quality){
     return self.stepperTip.value;
 }
 
-
 - (void) initDefaultValues {
     [self.txtOriginalAmount setText:@"100"];
     [self.segmentFoodQuality setSelectedSegmentIndex:eQualityOk];
     [self.segmentServiceQuality setSelectedSegmentIndex:eQualityOk];
-    
-    [self setTipText:[self calculateTipPercent]];
+
+    if( [self shouldSaveTip] ) {
+        [self setTipText:[self lastTipValue]];
+    } else {
+        [self setTipText:[self calculateTipPercent]];
+    }
     [self setTotalText:[self computeTotal]];
     self.stepperSplitCount.value = 1;
+}
+
+- (BOOL) shouldSaveTip {
+    return [[NSUserDefaults standardUserDefaults] integerForKey:@"rememberLastTipValue"] ;
+}
+
+- (Float32) lastTipValue {
+    return [[[NSUserDefaults standardUserDefaults] valueForKey:@"lastTipValue"] floatValue];
+}
+
+- (void) saveLastTipValue {
+    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setValue:self.txtTipAmount.text forKey:@"lastTipValue"];
+    [defaults synchronize];
 }
 
 #pragma mark - UI interaction methods
 
 - (IBAction)amountChanged:(id)sender {
-    [self setTipText:[self calculateTipPercent]];
     [self setTotalText:[self computeTotal]];
 }
 

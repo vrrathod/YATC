@@ -7,6 +7,7 @@
 //
 
 #import "VRAppDelegate.h"
+#import "VRViewController.h"
 
 @implementation VRAppDelegate
 
@@ -40,7 +41,12 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
+    VRViewController* mainVC = (VRViewController*)self.window.rootViewController;
+    
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    if( [mainVC shouldSaveTip] ) {
+        [mainVC saveLastTipValue];
+    }
 }
 
 @end

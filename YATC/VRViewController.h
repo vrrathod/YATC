@@ -27,4 +27,10 @@
 - (IBAction)tipStepperChanged:(id)sender;
 - (IBAction)splitValueChanged:(id)sender;
 
+// ---- Methods
+- (BOOL) shouldSaveTip ;
+
+- (void) saveLastTipValue ;
+
+
 @end

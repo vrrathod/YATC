@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13C48" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13C48" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="fXA-8f-I7q">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--View Controller - Tip Calculator-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="VRViewController" sceneMemberID="viewController">
@@ -127,6 +127,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Tip Calculator" id="Jxq-ld-s0p">
+                        <barButtonItem key="backBarButtonItem" title="&lt;" id="Dtt-Dp-fxC"/>
+                        <barButtonItem key="rightBarButtonItem" title="settings" style="plain" id="ylX-aC-fX5">
+                            <connections>
+                                <segue destination="XvD-tG-aiU" kind="push" id="9w0-Nr-8YG"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="labelFinalAmount" destination="qw8-DK-xie" id="Z8G-3F-onm"/>
                         <outlet property="labelSplitCount" destination="cgO-FH-FO1" id="Q7t-lA-I77"/>
@@ -140,6 +148,63 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1079" y="99"/>
+        </scene>
+        <!--Settings View Controller - Tip Calculator-->
+        <scene sceneID="zvf-7y-T0S">
+            <objects>
+                <viewController storyboardIdentifier="settings" useStoryboardIdentifierAsRestorationIdentifier="YES" id="XvD-tG-aiU" customClass="VRSettingsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="g1T-fu-cM7"/>
+                        <viewControllerLayoutGuide type="bottom" id="Mub-DB-9q4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vCr-Ec-KX3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bUc-X0-IIf">
+                                <rect key="frame" x="251" y="94" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="switchRememberTipChanged:" destination="XvD-tG-aiU" eventType="valueChanged" id="W5i-yt-O5C"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Remember last tip amount" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="49C-Zp-O2l">
+                                <rect key="frame" x="20" y="99" width="217" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Tip Calculator" id="vPq-ML-Onw"/>
+                    <connections>
+                        <outlet property="switchRememberTip" destination="bUc-X0-IIf" id="5Dq-f3-dJ6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5fm-kf-XIz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1548" y="96"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="w1Y-5L-iRv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fXA-8f-I7q" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="d7b-Qg-ROJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="Cbn-6t-iEU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0F4-94-BXK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="602" y="99"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
