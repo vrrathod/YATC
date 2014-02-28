@@ -29,7 +29,6 @@
 
 // ---- Methods
 - (BOOL) shouldSaveTip ;
-
 - (void) saveLastTipValue ;
 
 

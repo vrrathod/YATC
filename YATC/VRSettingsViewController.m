@@ -7,6 +7,7 @@
 //
 
 #import "VRSettingsViewController.h"
+#import "VRViewController.h"
 
 @interface VRSettingsViewController ()
 
@@ -27,6 +28,12 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    if( [[NSUserDefaults standardUserDefaults] integerForKey:@"rememberLastTipValue"] ) {
+        [self.switchRememberTip setOn:YES];
+    } else {
+        [self.switchRememberTip setOn:NO];
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -36,11 +43,12 @@
 }
 
 - (IBAction)switchRememberTipChanged:(id)sender {
-    if( [sender isKindOfClass:[UISwitch class]] ) {
-        UISwitch* shouldRememberLastTip = (UISwitch*) sender;
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        [defaults setInteger:[shouldRememberLastTip isOn] forKey:@"rememberLastTipValue"];
-        [defaults synchronize];
-    }
+    VRViewController* mainController = (VRViewController*) [[[UIApplication sharedApplication] keyWindow] rootViewController];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setInteger:[self.switchRememberTip isOn] forKey:@"rememberLastTipValue"];
+    [defaults synchronize];
+    
+    [mainController saveLastTipValue];
 }
 @end

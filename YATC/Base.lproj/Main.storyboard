@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
-        <!--View Controller - Tip Calculator-->
+        <!--View Controller - YATC-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="VRViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mainController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vXZ-lx-hvc" customClass="VRViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rwp-y6-Za3"/>
                         <viewControllerLayoutGuide type="bottom" id="22D-Pu-1p7"/>
@@ -127,9 +127,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Tip Calculator" id="Jxq-ld-s0p">
-                        <barButtonItem key="backBarButtonItem" title="&lt;" id="Dtt-Dp-fxC"/>
-                        <barButtonItem key="rightBarButtonItem" title="settings" style="plain" id="ylX-aC-fX5">
+                    <navigationItem key="navigationItem" title="YATC" id="Jxq-ld-s0p">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" style="plain" id="ylX-aC-fX5">
                             <connections>
                                 <segue destination="XvD-tG-aiU" kind="push" id="9w0-Nr-8YG"/>
                             </connections>
@@ -150,7 +149,7 @@
             </objects>
             <point key="canvasLocation" x="1079" y="99"/>
         </scene>
-        <!--Settings View Controller - Tip Calculator-->
+        <!--Settings View Controller - Settings-->
         <scene sceneID="zvf-7y-T0S">
             <objects>
                 <viewController storyboardIdentifier="settings" useStoryboardIdentifierAsRestorationIdentifier="YES" id="XvD-tG-aiU" customClass="VRSettingsViewController" sceneMemberID="viewController">
@@ -179,7 +178,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Tip Calculator" id="vPq-ML-Onw"/>
+                    <navigationItem key="navigationItem" title="Settings" id="vPq-ML-Onw">
+                        <barButtonItem key="backBarButtonItem" title="YATC" id="PN5-cN-QST"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="switchRememberTip" destination="bUc-X0-IIf" id="5Dq-f3-dJ6"/>
                     </connections>

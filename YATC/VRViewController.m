@@ -43,9 +43,6 @@ typedef NS_ENUM(NSUInteger, quality){
 #pragma mark - UI behavior util
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     [self.view endEditing:YES];
-    for(UIView* v in [self.view subviews]){
-        [v endEditing:YES];
-    }
 }
 
 #pragma mark - Helpers
@@ -64,11 +61,11 @@ typedef NS_ENUM(NSUInteger, quality){
 }
 
 - (void) setTipText:(Float32) tip {
+    [self.txtTipAmount setText:[NSString stringWithFormat:@"%.02f", tip]];
+    [self setStepperValue:tip];
     if( [self shouldSaveTip] ) {
         [self saveLastTipValue];
     }
-    [self.txtTipAmount setText:[NSString stringWithFormat:@"%.02f", tip]];
-    [self setStepperValue:tip];
 }
 
 - (void) setSplitLabel:(NSUInteger) split {
@@ -97,6 +94,9 @@ typedef NS_ENUM(NSUInteger, quality){
 }
 
 - (void) initDefaultValues {
+    
+    [self checkAndCreateLastTipKey];
+    
     [self.txtOriginalAmount setText:@"100"];
     [self.segmentFoodQuality setSelectedSegmentIndex:eQualityOk];
     [self.segmentServiceQuality setSelectedSegmentIndex:eQualityOk];
@@ -112,6 +112,18 @@ typedef NS_ENUM(NSUInteger, quality){
 
 - (BOOL) shouldSaveTip {
     return [[NSUserDefaults standardUserDefaults] integerForKey:@"rememberLastTipValue"] ;
+}
+
+- (void) checkAndCreateLastTipKey {
+
+    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+    NSArray* keys = [[defaults dictionaryRepresentation] allKeys];
+
+    if( ! [keys containsObject:@"rememberLastTipValue"] ) {
+        // by default we want to remember
+        [defaults setValue:@"YES" forKey:@"rememberLastTipValue"];
+        [defaults synchronize];
+    }
 }
 
 - (Float32) lastTipValue {
@@ -138,6 +150,10 @@ typedef NS_ENUM(NSUInteger, quality){
 - (IBAction)tipValueChanged:(id)sender {
     [self setStepperValue:[self.txtTipAmount.text floatValue]];
     [self setTotalText:[self computeTotal]];
+    // remember
+    if( [self shouldSaveTip] ) {
+        [self saveLastTipValue];
+    }
 }
 
 - (IBAction)tipStepperChanged:(id)sender {
