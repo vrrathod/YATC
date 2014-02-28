@@ -68,8 +68,12 @@ typedef NS_ENUM(NSUInteger, quality){
     [self setStepperValue:tip];
 }
 
+- (void) setSplitLabel:(NSUInteger) split {
+    [self.labelSplitCount setText:[NSString stringWithFormat:@"%lu", (unsigned long)split]];
+}
+
 - (void) setTotalText:(Float32) amount {
-    [self.labelFinalAmount setText:[NSString stringWithFormat:@"Total = %.02f", amount]];
+    [self.labelFinalAmount setText:[NSString stringWithFormat:@"Total = %.02f", amount/self.stepperSplitCount.value]];
 }
 
 - (void) setStepperValue:(Float32) tip {
@@ -97,7 +101,34 @@ typedef NS_ENUM(NSUInteger, quality){
     
     [self setTipText:[self calculateTipPercent]];
     [self setTotalText:[self computeTotal]];
+    self.stepperSplitCount.value = 1;
 }
 
+#pragma mark - UI interaction methods
 
+- (IBAction)amountChanged:(id)sender {
+    [self setTipText:[self calculateTipPercent]];
+    [self setTotalText:[self computeTotal]];
+}
+
+- (IBAction)qualityValueChanged:(id)sender {
+    [self setTipText:[self calculateTipPercent]];
+    [self setTotalText:[self computeTotal]];
+}
+
+- (IBAction)tipValueChanged:(id)sender {
+    [self setStepperValue:[self.txtTipAmount.text floatValue]];
+    [self setTotalText:[self computeTotal]];
+}
+
+- (IBAction)tipStepperChanged:(id)sender {
+    [self setTipText:(Float32)self.stepperTip.value];
+    [self setTotalText: [self computeTotal]];
+}
+
+- (IBAction)splitValueChanged:(id)sender {
+    [self setSplitLabel:self.stepperSplitCount.value];
+    Float32 total = [self computeTotal];
+    [self setTotalText:total];
+}
 @end

@@ -20,5 +20,11 @@
 @property (weak, nonatomic) IBOutlet UIStepper *stepperSplitCount;
 @property (weak, nonatomic) IBOutlet UILabel *labelFinalAmount;
 
+// ---- UI interaction methods
+- (IBAction)amountChanged:(id)sender;
+- (IBAction)qualityValueChanged:(id)sender;
+- (IBAction)tipValueChanged:(id)sender;
+- (IBAction)tipStepperChanged:(id)sender;
+- (IBAction)splitValueChanged:(id)sender;
 
 @end
