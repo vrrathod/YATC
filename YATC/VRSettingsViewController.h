@@ -14,4 +14,7 @@
 
 // ---- action ----
 - (IBAction)switchRememberTipChanged:(id)sender;
+
+// -- delegation setup --
+- (void) setMainViewControllerDelegate:(id) delegate;
 @end

@@ -7,8 +7,11 @@
 //
 
 #import "VRViewController.h"
+#import "VRSettingsViewController.h"
 
 #pragma mark - Constants & Enums
+
+NSString *const SEGUE_NAME_SETTINGS = @"settings";
 
 typedef NS_ENUM(NSUInteger, quality){
     eQualityBad,
@@ -110,31 +113,6 @@ typedef NS_ENUM(NSUInteger, quality){
     self.stepperSplitCount.value = 1;
 }
 
-- (BOOL) shouldSaveTip {
-    return [[NSUserDefaults standardUserDefaults] integerForKey:@"rememberLastTipValue"] ;
-}
-
-- (void) checkAndCreateLastTipKey {
-
-    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
-    NSArray* keys = [[defaults dictionaryRepresentation] allKeys];
-
-    if( ! [keys containsObject:@"rememberLastTipValue"] ) {
-        // by default we want to remember
-        [defaults setValue:@"YES" forKey:@"rememberLastTipValue"];
-        [defaults synchronize];
-    }
-}
-
-- (Float32) lastTipValue {
-    return [[[NSUserDefaults standardUserDefaults] valueForKey:@"lastTipValue"] floatValue];
-}
-
-- (void) saveLastTipValue {
-    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setValue:self.txtTipAmount.text forKey:@"lastTipValue"];
-    [defaults synchronize];
-}
 
 #pragma mark - UI interaction methods
 
@@ -165,5 +143,49 @@ typedef NS_ENUM(NSUInteger, quality){
     [self setSplitLabel:self.stepperSplitCount.value];
     Float32 total = [self computeTotal];
     [self setTotalText:total];
+}
+
+#pragma mark - Protocol Methods -
+
+- (BOOL) shouldSaveTip {
+    return [[NSUserDefaults standardUserDefaults] integerForKey:@"rememberLastTipValue"] ;
+}
+
+- (void) saveLastTipValue {
+    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setValue:self.txtTipAmount.text forKey:@"lastTipValue"];
+    [defaults synchronize];
+}
+
+- (void) removeLastTipeValue {
+    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+    [defaults removeObjectForKey:@"lastTipValue"];
+    [defaults synchronize];
+    
+}
+
+- (void) checkAndCreateLastTipKey {
+    
+    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+    NSArray* keys = [[defaults dictionaryRepresentation] allKeys];
+    
+    if( ! [keys containsObject:@"rememberLastTipValue"] ) {
+        // by default we want to remember
+        [defaults setValue:@"YES" forKey:@"rememberLastTipValue"];
+        [defaults synchronize];
+    }
+}
+
+- (Float32) lastTipValue {
+    return [[[NSUserDefaults standardUserDefaults] valueForKey:@"lastTipValue"] floatValue];
+}
+
+
+#pragma mark - Segue Method -
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if( [[segue identifier] isEqualToString:SEGUE_NAME_SETTINGS] ) {
+        VRSettingsViewController* targetViewController = [segue destinationViewController];
+        [targetViewController setMainViewControllerDelegate:self];
+    }
 }
 @end

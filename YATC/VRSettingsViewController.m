@@ -7,9 +7,11 @@
 //
 
 #import "VRSettingsViewController.h"
-#import "VRViewController.h"
+#import "VRUserDefaults.h"
 
 @interface VRSettingsViewController ()
+/// delegate
+@property (weak) id<VRUserDefaults> vrMainViewController;
 
 @end
 
@@ -43,12 +45,36 @@
 }
 
 - (IBAction)switchRememberTipChanged:(id)sender {
-    VRViewController* mainController = (VRViewController*) [[[UIApplication sharedApplication] keyWindow] rootViewController];
-    
+
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setInteger:[self.switchRememberTip isOn] forKey:@"rememberLastTipValue"];
-    [defaults synchronize];
     
-    [mainController saveLastTipValue];
+    // if current setting is to save it, save it
+    if( [self.switchRememberTip isOn] ){
+        [defaults setInteger:[self.switchRememberTip isOn] forKey:@"rememberLastTipValue"];
+        [self.vrMainViewController saveLastTipValue];
+    } else if( ! [self.switchRememberTip isOn] ) {
+        [defaults removeObjectForKey:@"rememberLastTipValue"];
+        [self.vrMainViewController removeLastTipeValue];
+    }
+    [defaults synchronize];
+}
+
+#pragma mark -- delegate --
+- (void) setMainViewControllerDelegate:(id) delegate {
+    
+    do {
+        // reset delegate
+        self.vrMainViewController = nil;
+        
+        if( !delegate ) {
+            break;
+        } else if( ! [delegate respondsToSelector:@selector(saveLastTipValue)] ) {
+            break;
+        } else if( ! [delegate respondsToSelector:@selector(removeLastTipeValue)] ) {
+            break;
+        }
+        self.vrMainViewController = delegate;
+    } while (0);
+    
 }
 @end

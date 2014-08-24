@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface VRViewController : UIViewController
+#import "VRUserDefaults.h"
+
+@interface VRViewController : UIViewController<VRUserDefaults>
 
 // ---- outlets ----
 @property (weak, nonatomic) IBOutlet UITextField *txtOriginalAmount;
@@ -27,9 +29,10 @@
 - (IBAction)tipStepperChanged:(id)sender;
 - (IBAction)splitValueChanged:(id)sender;
 
-// ---- Methods
+// ---- VRViewControllerProtocol Methods
 - (BOOL) shouldSaveTip ;
 - (void) saveLastTipValue ;
+- (void) removeLastTipeValue ;
 
 
 @end

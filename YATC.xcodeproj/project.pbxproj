@@ -37,6 +37,7 @@
 /* Begin PBXFileReference section */
 		600A6E3618C0913C00215CD1 /* VRSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VRSettingsViewController.h; sourceTree = "<group>"; };
 		600A6E3718C0913C00215CD1 /* VRSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VRSettingsViewController.m; sourceTree = "<group>"; };
+		6046FE9119A96376003C825A /* VRUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VRUserDefaults.h; sourceTree = "<group>"; };
 		60E7C7AF18C06F4B003E7D3A /* YATC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YATC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60E7C7B218C06F4B003E7D3A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		60E7C7B418C06F4B003E7D3A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -118,6 +119,7 @@
 				60E7C7C118C06F4B003E7D3A /* VRAppDelegate.h */,
 				60E7C7C218C06F4B003E7D3A /* VRAppDelegate.m */,
 				60E7C7C418C06F4B003E7D3A /* Main.storyboard */,
+				6046FE9119A96376003C825A /* VRUserDefaults.h */,
 				60E7C7C718C06F4B003E7D3A /* VRViewController.h */,
 				60E7C7C818C06F4B003E7D3A /* VRViewController.m */,
 				60E7C7CA18C06F4B003E7D3A /* Images.xcassets */,
