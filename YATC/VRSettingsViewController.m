@@ -8,6 +8,7 @@
 
 #import "VRSettingsViewController.h"
 #import "VRUserDefaults.h"
+#import "VRConstants.h"
 
 @interface VRSettingsViewController ()
 /// delegate
@@ -30,7 +31,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    if( [[NSUserDefaults standardUserDefaults] integerForKey:@"rememberLastTipValue"] ) {
+    if( [[NSUserDefaults standardUserDefaults] integerForKey:USERDEFAULTS_REMEMBERLASTTIP_SETTINGS_NAME] ) {
         [self.switchRememberTip setOn:YES];
     } else {
         [self.switchRememberTip setOn:NO];
@@ -50,10 +51,10 @@
     
     // if current setting is to save it, save it
     if( [self.switchRememberTip isOn] ){
-        [defaults setInteger:[self.switchRememberTip isOn] forKey:@"rememberLastTipValue"];
+        [defaults setInteger:[self.switchRememberTip isOn] forKey:USERDEFAULTS_REMEMBERLASTTIP_SETTINGS_NAME];
         [self.vrMainViewController saveLastTipValue];
     } else if( ! [self.switchRememberTip isOn] ) {
-        [defaults removeObjectForKey:@"rememberLastTipValue"];
+        [defaults removeObjectForKey:USERDEFAULTS_REMEMBERLASTTIP_SETTINGS_NAME];
         [self.vrMainViewController removeLastTipeValue];
     }
     [defaults synchronize];

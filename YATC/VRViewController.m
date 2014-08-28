@@ -8,10 +8,9 @@
 
 #import "VRViewController.h"
 #import "VRSettingsViewController.h"
-
+#import "VRConstants.h"
 #pragma mark - Constants & Enums
 
-NSString *const SEGUE_NAME_SETTINGS = @"settings";
 
 typedef NS_ENUM(NSUInteger, quality){
     eQualityBad,
@@ -101,12 +100,14 @@ typedef NS_ENUM(NSUInteger, quality){
     [self checkAndCreateLastTipKey];
     
     [self.txtOriginalAmount setText:@"100"];
-    [self.segmentFoodQuality setSelectedSegmentIndex:eQualityOk];
-    [self.segmentServiceQuality setSelectedSegmentIndex:eQualityOk];
 
     if( [self shouldSaveTip] ) {
+        [self.segmentFoodQuality setSelectedSegmentIndex:[self lastFoodQualityValue]];
+        [self.segmentServiceQuality setSelectedSegmentIndex:[self lastServiceQualityValue]];
         [self setTipText:[self lastTipValue]];
     } else {
+        [self.segmentFoodQuality setSelectedSegmentIndex:eQualityOk];
+        [self.segmentServiceQuality setSelectedSegmentIndex:eQualityOk];
         [self setTipText:[self calculateTipPercent]];
     }
     [self setTotalText:[self computeTotal]];
@@ -148,20 +149,29 @@ typedef NS_ENUM(NSUInteger, quality){
 #pragma mark - Protocol Methods -
 
 - (BOOL) shouldSaveTip {
-    return [[NSUserDefaults standardUserDefaults] integerForKey:@"rememberLastTipValue"] ;
+    return [[NSUserDefaults standardUserDefaults] integerForKey:USERDEFAULTS_REMEMBERLASTTIP_SETTINGS_NAME] ;
 }
 
 - (void) saveLastTipValue {
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setValue:self.txtTipAmount.text forKey:@"lastTipValue"];
+    // save the tip value
+    [defaults setValue:self.txtTipAmount.text forKey:USERDEFAULTS_LASTTIP_VALUE_NAME];
+    // save the food and service quality rating
+    quality food = [self.segmentFoodQuality selectedSegmentIndex];
+    [defaults setObject:[NSNumber numberWithUnsignedInt:food]
+                 forKey:USERDEFAULTS_FOOD_QUALITY_NAME];
+    
+    quality service = [self.segmentServiceQuality selectedSegmentIndex];
+    [defaults setObject:[NSNumber numberWithUnsignedInt:service]
+                 forKey:USERDEFAULTS_SERVICE_QUALITY_NAME];
+    
     [defaults synchronize];
 }
 
 - (void) removeLastTipeValue {
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
-    [defaults removeObjectForKey:@"lastTipValue"];
+    [defaults removeObjectForKey:USERDEFAULTS_LASTTIP_VALUE_NAME];
     [defaults synchronize];
-    
 }
 
 - (void) checkAndCreateLastTipKey {
@@ -169,17 +179,24 @@ typedef NS_ENUM(NSUInteger, quality){
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
     NSArray* keys = [[defaults dictionaryRepresentation] allKeys];
     
-    if( ! [keys containsObject:@"rememberLastTipValue"] ) {
+    if( ! [keys containsObject:USERDEFAULTS_REMEMBERLASTTIP_SETTINGS_NAME] ) {
         // by default we want to remember
-        [defaults setValue:@"YES" forKey:@"rememberLastTipValue"];
+        [defaults setValue:@"YES" forKey:USERDEFAULTS_REMEMBERLASTTIP_SETTINGS_NAME];
         [defaults synchronize];
     }
 }
 
 - (Float32) lastTipValue {
-    return [[[NSUserDefaults standardUserDefaults] valueForKey:@"lastTipValue"] floatValue];
+    return [[[NSUserDefaults standardUserDefaults] valueForKey:USERDEFAULTS_LASTTIP_VALUE_NAME] floatValue];
 }
 
+- (NSUInteger) lastFoodQualityValue {
+    return [[[NSUserDefaults standardUserDefaults] valueForKey:USERDEFAULTS_FOOD_QUALITY_NAME] unsignedIntegerValue];
+}
+
+- (NSUInteger) lastServiceQualityValue {
+    return [[[NSUserDefaults standardUserDefaults] valueForKey:USERDEFAULTS_SERVICE_QUALITY_NAME] unsignedIntegerValue];
+}
 
 #pragma mark - Segue Method -
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

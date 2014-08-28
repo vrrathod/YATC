@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		600A6E3818C0913C00215CD1 /* VRSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 600A6E3718C0913C00215CD1 /* VRSettingsViewController.m */; };
+		6046FE9419A97605003C825A /* VRConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 6046FE9319A97605003C825A /* VRConstants.m */; };
 		60E7C7B318C06F4B003E7D3A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60E7C7B218C06F4B003E7D3A /* Foundation.framework */; };
 		60E7C7B518C06F4B003E7D3A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60E7C7B418C06F4B003E7D3A /* CoreGraphics.framework */; };
 		60E7C7B718C06F4B003E7D3A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60E7C7B618C06F4B003E7D3A /* UIKit.framework */; };
@@ -38,6 +39,8 @@
 		600A6E3618C0913C00215CD1 /* VRSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VRSettingsViewController.h; sourceTree = "<group>"; };
 		600A6E3718C0913C00215CD1 /* VRSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VRSettingsViewController.m; sourceTree = "<group>"; };
 		6046FE9119A96376003C825A /* VRUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VRUserDefaults.h; sourceTree = "<group>"; };
+		6046FE9219A97423003C825A /* VRConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VRConstants.h; sourceTree = "<group>"; };
+		6046FE9319A97605003C825A /* VRConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VRConstants.m; sourceTree = "<group>"; };
 		60E7C7AF18C06F4B003E7D3A /* YATC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YATC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60E7C7B218C06F4B003E7D3A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		60E7C7B418C06F4B003E7D3A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -126,6 +129,8 @@
 				60E7C7B918C06F4B003E7D3A /* Supporting Files */,
 				600A6E3618C0913C00215CD1 /* VRSettingsViewController.h */,
 				600A6E3718C0913C00215CD1 /* VRSettingsViewController.m */,
+				6046FE9219A97423003C825A /* VRConstants.h */,
+				6046FE9319A97605003C825A /* VRConstants.m */,
 			);
 			path = YATC;
 			sourceTree = "<group>";
@@ -257,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6046FE9419A97605003C825A /* VRConstants.m in Sources */,
 				60E7C7C918C06F4B003E7D3A /* VRViewController.m in Sources */,
 				600A6E3818C0913C00215CD1 /* VRSettingsViewController.m in Sources */,
 				60E7C7C318C06F4B003E7D3A /* VRAppDelegate.m in Sources */,
